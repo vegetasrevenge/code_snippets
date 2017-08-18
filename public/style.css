@@ -1,0 +1,58 @@
+body {
+  background-color: #87E8FF;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  flex-flow: column;
+  margin: 0;
+}
+
+
+.container {
+  padding: 0 10px 0 10px;
+
+}
+
+nav {
+  background-color: #236E7F;
+  color: #87E8FF;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  padding: 0;
+  flex-flow: row;
+  justify-content: center;
+}
+
+nav a {
+  flex-basis: 25%;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+nav a:hover {
+  color: #3AD9FF
+}
+
+.shortform {
+ border: solid 2px #1D6C7F;
+ display: flex;
+ flex-flow: row;
+ padding: 10px;
+ justify-content: center;
+ margin: 0 auto;
+}
+
+.loginMessage {
+  display: flex;
+  flex-flow: row;
+}
+
+.loginMessage a {
+  text-decoration: none;
+}
+
+.loginMessage a:hover {
+  color: white;
+}

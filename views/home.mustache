@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Homepage</title>
+    <link rel="Stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+  <body>
+
+    <nav>
+      <a href="/login"><h3>Login</h3></a>
+      <a href="/register"><h3>Register</h3></a>
+      <a href="/logout"><h3>Logout</h3></a>
+      <a href="/snippetlang"><h3>Search Snippets</h3></a>
+    </nav>
+
+
+  <div class="container">
+    <h1>Welcome, {{ username }}</h1>
+
+
+
+  <form action="/snippets" method="post">
+    <input type="text" name="title" placeholder="title"/>
+    <input type="text" name="code" placeholder="body"/>
+    <input type="text" name="notes" placeholder="notes"/>
+    <!-- <input type="text" name="language" placeholder="language"/> -->
+    <select name="language">
+      <option value="Javascript">Javascript</option>
+      <option value="HTML/CSS">HTML/CSS</option>
+      <option value="Java">Java</option>
+      <option value="Ruby">Ruby</option>
+      <option value="C#">C#</option>
+    </select>
+    <input type="text" name="tags" placeholder="tags"/>
+    <button type="submit">Bend the Knee</button>
+  </form>
+
+  <ul>
+    {{ #snippets }}
+    <li>
+      {{ title }} | {{ code }} | {{ notes }} | {{ language }} | {{ tags }}
+    </li>
+    {{ /snippets }}
+  </ul>
+
+  </div>
+
+
+  </body>
+</html>
