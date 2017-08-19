@@ -7,14 +7,27 @@ router.get('/', (req, res) => {
   res.render('login');
 });
 
-router.get('/snippetlang', authRequired, (req, res) => {
-  //this is a query request to the database
+router.get('/snippet_search', authRequired, (req, res) => {
+
+  res.render('snippet_search');
+});
+
+router.get('/snippet_search/language', authRequired, (req, res) =>{
+
   Snippet.find({language: req.query.language})
     .then((results) => {
-      console.log("here are your results ", results);
-      res.render('snippetlang', {snippetlang: results});
+      res.render('snippet_search', {snippetLang: results});
     })
 });
+
+router.get('/snippet_search/tags', authRequired, (req, res) => {
+  Snippet.find({tags: req.query.tags})
+    .then((results) => {
+      res.render('snippet_search', {snippetTag: results});
+    })
+});
+
+
 
 function authRequired(req, res, next) {
   if(req.user) {
@@ -37,9 +50,10 @@ router.post('/snippets', (req, res) => {
   newSnippet
     .save()
     .then((result) => {
-      console.log('post');
+      console.log('posted');
       return result;
     });
+    res.redirect('/home');
 });
 
 
